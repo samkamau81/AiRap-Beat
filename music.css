@@ -1,0 +1,235 @@
+body{
+    margin: 0;
+    padding: 0;
+    background:#ddec98;
+    box-sizing: border-box;
+}
+
+.search-box:hover > .search-txt{
+    width: 240px;
+    padding: 0 6px;
+}
+.search-box:hover > .search-btn{
+    background-color: #F8EFBA;
+}
+.search-box{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background: #a3d2ca;
+    height:40px;
+    border-radius: 40px;
+    padding:10px;
+}
+
+.search-btn{
+    color:#0a0a0a;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #F8EFBA;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.search-txt{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color:black;
+    font-size: 15px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+    background:#f4f76b;
+    transform-origin: top left;
+    transition: transform 0.5s linear;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px 3rem;
+    overflow: hidden;
+    display: flex;
+  }
+
+.container .set{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    top: 0;
+    left: 0;
+}
+
+.container .set div {
+    position: absolute;
+    display: block;
+}
+img {
+    height: 100px;
+    width:100px;
+}
+
+.container .set div:nth-child(1){
+    left: 20%;
+    animation: animate 15s linear infinite;
+    animation-delay: -5s ;
+}
+
+.container .set div:nth-child(2){
+    left: 50%;
+    animation: animate 20s linear infinite;
+    animation-delay: -7s ;
+}
+.container .set div:nth-child(3){
+    left: 70%;
+    animation: animate 20s linear infinite;
+    animation-delay: 0s ;
+}
+.container .set div:nth-child(4){
+    left: 0%;
+    animation: animate 15s linear infinite;
+    animation-delay: -5s ;
+}
+.container .set div:nth-child(5){
+    left: 85%;
+    animation: animate 18s linear infinite;
+    animation-delay: -10s ;
+}
+.container .set div:nth-child(6){
+    left: 0%;
+    animation: animate 25s linear infinite;
+}
+.container .set div:nth-child(7){
+    left: 30%;
+    animation: animate 16s linear infinite;
+}
+.container .set div:nth-child(8){
+    left: 60%;
+    animation: animate 20s linear infinite;
+}
+.container .set div:nth-child(9){
+    left: 80%;
+    animation: animate 12s linear infinite;
+}
+.container .set div:nth-child(10){
+    left: 90%;
+    animation: animate 18s linear infinite;
+    animation-delay: -8s;
+}
+.container .set div:nth-child(11){
+    left: 12%;
+    animation: animate 15s linear infinite;
+    animation-delay: -3s;
+}
+.container .set div:nth-child(12){
+    left: 100%;
+    animation: animate 10s linear infinite;
+    animation-delay: -6s;
+}
+
+@keyframes animate{
+    0%{
+        opacity:0;
+        top: -10%;
+        transform: translate(20px) rotate(0deg);
+    }
+    10%{
+        opacity: 1;
+    }
+    20%{
+        transform: translate(-20px) rotate(45deg);
+    }
+    
+    40%{
+        transform: translate(-20px) rotate(90deg);
+    }
+    60%{
+        transform: translate(20px) rotate(180deg);
+    }
+    80%{
+        transform: translate(-20px) rotate(180deg);
+    }
+    100%{
+        top: 110%;
+        transform: translate(-20px) rotate(225deg);
+    }
+}
+
+.set2{
+    transform: scale(0.8) rotateX(180deg);
+    filter:blur(2px);
+}
+.set3{
+    transform: scale(0.5) rotateY(180deg);
+    filter:blur(4px);
+}
+  .container.show-nav {
+    transform: rotate(-20deg);
+  }
+  
+  .circle-container {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+  }
+
+  .content {
+    width: 200vh;
+    margin: 50px 0px;
+    padding: 1rem 0;
+    display: flex;
+  }
+
+.circle {
+  background-color: #a3d2ca;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+
+.circle button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  border: 0;
+  font-size: 26px;
+  color: rgb(0, 0, 0);
+}
+
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open {
+  left: 60%;
+}
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.container.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
